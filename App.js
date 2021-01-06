@@ -1,25 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import {
+  StyleSheet,
+  SafeAreaView,
+  FlatList,
+  SafeAreaSafeAreaView,
+} from 'react-native';
 import ListItem from './components/ListItem';
 import articles from './dummies/articles.json';
 
 export default function App() {
-  // map関数でarticleの配列を展開
-  const items = articles.map((article, index) => {
-    return (
-      <ListItem
-        imageUrl={article.urlToImage}
-        text={article.title}
-        author={article.author}
-        // keyを忘れずに
-        key={index}
-      />
-    );
-  });
-
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* ↓mapで展開したarticlesの内容を表示 */}
       <FlatList
         data={articles}
@@ -30,10 +22,11 @@ export default function App() {
             author={item.author}
           />
         )}
+        // idは持ってないのでindexで代用
         keyExtractor={(item, index) => index.toString()}
       />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 

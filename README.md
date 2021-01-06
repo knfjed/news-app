@@ -28,8 +28,6 @@ React Native の開発ツールの一つ。
   例えば、分析系やバックグラウンドでの音楽再生、bluetooth など。
   expo が提供しているものであれば使用できる。（位置情報やカメラの使用など）
 
-  //////////////////////////////
-
   ## FlatList
 
   ### 画面をスクロールさせる
@@ -37,3 +35,9 @@ React Native の開発ツールの一つ。
   url[https://reactnative.dev/docs/flatlist#docsNav]
 
   スクロールさせたいエリア（画面全体）を<FlatList>で囲う
+
+## SafeAreaView
+
+### iPhone12 などの大画面の上下ベゼル部分を回避
+
+url[https://reactnative.dev/docs/safeareaview#docsNav]
