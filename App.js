@@ -1,18 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import {
-  StyleSheet,
-  SafeAreaView,
-  FlatList,
-  SafeAreaSafeAreaView,
-} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import ListItem from './components/ListItem';
-import articles from './dummies/articles.json';
+import dummyArticles from './dummies/articles.json';
 
 export default function App() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setArticles(dummyArticles);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
-      {/* ↓mapで展開したarticlesの内容を表示 */}
       <FlatList
         data={articles}
         renderItem={({ item }) => (
