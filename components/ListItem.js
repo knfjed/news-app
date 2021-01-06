@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
@@ -27,33 +26,27 @@ const styles = StyleSheet.create({
   },
 });
 
-const Listitem = () => {
+const ListItem = ({ imageUrl, text, author }) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.leftContainer}>
         <Image
           style={{ width: 100, height: 100 }}
           source={{
-            uri: 'https://picsum.photos/200',
+            uri: imageUrl,
           }}
         />
       </View>
 
       <View style={styles.rightContainer}>
         <Text numberOfLines={3} style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          {text}
         </Text>
 
-        <Text style={styles.subText}>React News</Text>
+        <Text style={styles.subText}>{author}</Text>
       </View>
     </View>
   );
 };
 
-export default Listitem;
+export default ListItem;
