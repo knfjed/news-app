@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import ListItem from './components/ListItem';
 import articles from './dummies/articles.json';
 
 export default function App() {
+  // map関数でarticleの配列を展開
   const items = articles.map((article, index) => {
     return (
       <ListItem
@@ -20,7 +21,17 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* ↓mapで展開したarticlesの内容を表示 */}
-      {items}
+      <FlatList
+        data={articles}
+        renderItem={({ item }) => (
+          <ListItem
+            imageUrl={item.urlToImage}
+            text={item.title}
+            author={item.author}
+          />
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -30,7 +41,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
