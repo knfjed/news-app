@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const URL = `http://newsapi.org/v2/top-headlines?country=jp&apiKey=${Constants.manifest.extra.newsApiKey}`;
 
-export default HomeScreen = () => {
+export default HomeScreen = ({ navigation }) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -32,6 +32,8 @@ export default HomeScreen = () => {
             imageUrl={item.urlToImage}
             text={item.title}
             author={item.author}
+            // AppNavigator内のnameをキーとして指定する　navigation.navigate('キー')
+            onPress={() => navigation.navigate('Article')}
           />
         )}
         // idは持ってないのでindexで代用
