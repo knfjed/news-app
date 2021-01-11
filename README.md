@@ -49,3 +49,30 @@ url: 'https://reactnative.dev/docs/safeareaview#docsNav'
 ## APIkey などコミットしたくない情報の保存方法
 
 url: 'https://www.it-swarm-ja.tech/ja/reactjs/createreactapp%E3%81%A7api%E3%82%AD%E3%83%BC%E3%82%92%E9%9D%9E%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F/835897536/'
+
+## React Navigation
+
+### 画面遷移
+
+url: 'https://reactnavigation.org/docs/getting-started'
+
+npm でインストール後、import して利用
+参考：'https://reactnavigation.org/docs/hello-react-navigation'
+
+## TouchableOpacity
+
+### タッチ操作を感知
+
+url: 'https://reactnative.dev/docs/touchableopacity'
+
+1- 子コンポーネント（今回は Listitem.js）内にて<br/>
+<TouchableOpacity>で囲み、オプション onPress を指定<br/>
+2- 親コンポーネントに onPress を props として渡して利用する
+
+## WebView
+
+### Web コンテンツをレンダリングする
+
+url: 'https://docs.expo.io/versions/latest/sdk/webview/'
+
+npm でインストール後、import して利用
