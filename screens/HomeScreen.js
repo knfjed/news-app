@@ -33,7 +33,7 @@ export default HomeScreen = ({ navigation }) => {
             text={item.title}
             author={item.author}
             // AppNavigator内のnameをキーとして指定する　navigation.navigate('キー')
-            onPress={() => navigation.navigate('Article')}
+            onPress={() => navigation.navigate('Article', { article: item })}
           />
         )}
         // idは持ってないのでindexで代用

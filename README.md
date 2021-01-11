@@ -76,3 +76,11 @@ url: 'https://reactnative.dev/docs/touchableopacity'
 url: 'https://docs.expo.io/versions/latest/sdk/webview/'
 
 npm でインストール後、import して利用
+
+## 画面間でのパラメータの渡し方
+
+url: 'https://reactnavigation.org/docs/params/'
+
+1- 親　 navigation.navigate の第二引数に渡したいパラメータのオブジェクトを指定
+（itemId,otherParams）
+2- 子（遷移先）　 props として受け取る
